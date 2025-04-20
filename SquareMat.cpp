@@ -4,6 +4,7 @@
 
 #include "SquareMat.h"
 #include <iostream>
+#include <cmath>
 
 namespace matrix {
     SquareMat SquareMat::delRowCol(const SquareMat &mat, const int row, const int col) {
@@ -137,7 +138,7 @@ namespace matrix {
         SquareMat result(n);
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j)
-                result.matrix[i][j] = (static_cast<int>(matrix[i][j]) % scalar);
+                result.matrix[i][j] = fmod(matrix[i][j], scalar);
         return result;
     }
 
