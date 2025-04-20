@@ -44,7 +44,7 @@ namespace matrix {
 
     SquareMat::SquareMat(const int n): n(n) {
         if (n == 0) throw std::invalid_argument("Matrix size must be positive non-zero");
-        
+
         this->matrix = new double *[n];
         for (int i = 0; i < n; i++)
             this->matrix[i] = new double[n];
@@ -52,13 +52,8 @@ namespace matrix {
         *this = 0;
     }
 
-    SquareMat::SquareMat(const SquareMat &copy): n(copy.n) {
-        this->matrix = new double *[n];
-        for (int i = 0; i < n; i++) {
-            this->matrix[i] = new double[n];
-            for (int j = 0; j < n; j++)
-                this->matrix[i][j] = copy.matrix[i][j];
-        }
+    SquareMat::SquareMat(const SquareMat &copy): SquareMat(copy.n) {
+        *this = copy;
     }
 
     SquareMat::~SquareMat() {
