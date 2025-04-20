@@ -44,12 +44,12 @@ namespace matrix {
 
     SquareMat::SquareMat(const int n): n(n) {
         if (n == 0) throw std::invalid_argument("Matrix size must be positive non-zero");
+        
         this->matrix = new double *[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             this->matrix[i] = new double[n];
-            for (int j = 0; j < n; j++)
-                this->matrix[i][j] = 0;
-        }
+
+        *this = 0;
     }
 
     SquareMat::SquareMat(const SquareMat &copy): n(copy.n) {
@@ -152,7 +152,7 @@ namespace matrix {
 
         // Make identity
         SquareMat result = identity(n);
-        // Repeat mul
+        // Apply repeat mul
         for (int i = 0; i < exp; ++i)
             result *= *this;
 

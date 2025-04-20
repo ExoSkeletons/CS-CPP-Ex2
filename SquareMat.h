@@ -85,6 +85,13 @@ namespace matrix {
             return *this;
         }
 
+        SquareMat &operator=(const double val) {
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < n; j++)
+                        this->matrix[i][j] = val;
+                return *this;
+        }
+
         SquareMat &operator*=(const SquareMat &other) { return *this = *this * other; }
 
         SquareMat &operator%=(const SquareMat &other) { return *this = *this % other; }
