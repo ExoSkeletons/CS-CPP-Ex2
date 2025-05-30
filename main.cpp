@@ -33,7 +33,9 @@ int main() {
     cout << "a*b\n" << a * b;
     cout << endl;
 
-    cout << "det(-b):\n" << !(-b);
+    cout << "det(-b):\n" << !(-b) << "\n";
+
+    cout << "trace (a): " << a() << "\n";
 
     return 0;
 }

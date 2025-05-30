@@ -79,6 +79,13 @@ namespace matrix {
         return sum;
     }
 
+    double SquareMat::trace() const {
+        double sum = 0;
+        for (int i =0;i<n;i++) {
+            sum+= (*this)[i][i];
+        }
+        return sum;
+    }
 
     SquareMat SquareMat::operator+(const SquareMat &other) const {
         if (n != other.n) throw std::invalid_argument("Matrix size mismatch");

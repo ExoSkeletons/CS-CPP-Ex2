@@ -39,11 +39,16 @@ namespace matrix {
         // Element Sum
         double sum() const;
 
+        // Trace
+        double trace() const;
+
         /* Element Access */
 
         double *operator[](const int i) { return matrix[i]; }
 
         const double *operator[](const int i) const { return matrix[i]; }
+
+        double operator()() { return trace(); }
 
 
         /* Math Operators */
