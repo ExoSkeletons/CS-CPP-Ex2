@@ -81,8 +81,8 @@ namespace matrix {
 
     double SquareMat::trace() const {
         double sum = 0;
-        for (int i =0;i<n;i++) {
-            sum+= (*this)[i][i];
+        for (int i = 0;i < n; i++) {
+            sum += (*this)[i][i];
         }
         return sum;
     }
